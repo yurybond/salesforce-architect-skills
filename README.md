@@ -1,118 +1,67 @@
-# ai-architect
+# salesforce-architect-skills
 
-AI customization repository that supports two distribution channels for GitHub Copilot:
-
-1. Skills channel (direct skill install and usage)
-2. Plugin marketplace channel (installable Copilot plugin bundles)
+Repository for Salesforce-focused Copilot skills and supporting evaluation assets.
 
 ## Repository structure
 
 ```
 skills/
-  lucidchart-diagrams/
+  salesforce-diagram/
+    SKILL.md
+    README.md
+    assets/
+    evals/
+    references/
+    scripts/
+    styles/
+  salesforce-org-shape-analysis/
     SKILL.md
 
 plugins/
   ai-architect-core/
-    plugin.json
 
-.github/
-  plugin/
-    marketplace.json
+artifacts/
+  evaluation/
 ```
 
-## Included manifests
+## Included skills
 
-- Skills manifest:
-  - `skills/lucidchart-diagrams/SKILL.md`
-- Plugin manifest:
-  - `plugins/ai-architect-core/plugin.json`
-- Marketplace manifest:
-  - `.github/plugin/marketplace.json`
+- `salesforce-diagram`: Generates Salesforce and general Draw.io diagrams with Salesforce-specific templates and references.
+- `salesforce-org-shape-analysis`: Produces Salesforce org analysis artifacts used to ground diagram generation.
 
-## Channel 1: Skills
+Skill manifests in this repository:
 
-Skill name: `lucidchart-diagrams`
+- `skills/salesforce-diagram/SKILL.md`
+- `skills/salesforce-org-shape-analysis/SKILL.md`
 
-Install with GitHub CLI skills tooling:
+## Skills installation (Salesforce CLI)
+
+Pre-requisite: Salesforce CLI is installed.
+
+1. Install the `sf-aidev` plugin for Salesforce CLI:
 
 ```bash
-gh skill preview OWNER/REPO lucidchart-diagrams
-gh skill install OWNER/REPO lucidchart-diagrams
+sf plugins install sf-aidev
 ```
 
-Use in Copilot CLI:
-
-```text
-/skills list
-/skills info lucidchart-diagrams
-Use /lucidchart-diagrams to create a sequence diagram for checkout flow
-```
-
-Notes:
-
-- `SKILL.md` is required and case-sensitive.
-- Skill `name` must be lowercase kebab-case.
-- Skill directory name should match the skill `name`.
-
-## Channel 2: Plugin marketplace
-
-Marketplace name: `ai-architect-marketplace`
-
-Plugin name: `ai-architect-core`
-
-Add marketplace and install plugin:
+2. For a project without AI configuration, initialize from this repository:
 
 ```bash
-copilot plugin marketplace add OWNER/REPO
-copilot plugin marketplace list
-copilot plugin marketplace browse ai-architect-marketplace
-copilot plugin install ai-architect-core@ai-architect-marketplace
+sf aidev init --source yurybond/salesforce-architect-skills --tool copilot
 ```
-
-Manage installed plugin:
-
-```bash
-copilot plugin list
-copilot plugin update ai-architect-core
-copilot plugin uninstall ai-architect-core
-```
-
-## Versioning and publishing checklist
-
-When releasing updates:
-
-1. Update plugin version in `plugins/ai-architect-core/plugin.json`.
-2. Update matching plugin version in `.github/plugin/marketplace.json`.
-3. Commit and push changes.
-4. Consumers run `copilot plugin update ai-architect-core`.
-
-For skills channel updates:
-
-1. Update the skill in `skills/<skill-name>/SKILL.md`.
-2. Publish/update via GitHub CLI skills workflow (`gh skill publish`, preview feature).
-
-## Adding new skills
-
-1. Create `skills/<new-skill-name>/SKILL.md`.
-2. Use required YAML frontmatter fields:
-   - `name`
-   - `description`
-3. Keep names kebab-case.
-4. If the skill should ship in plugin installs, no extra mapping is needed as long as it is under `skills/` (the plugin manifest points to that directory).
 
 ## Skill evaluation (salesforce-diagram)
 
 ### Where to edit evals and assertions
 
-- Evals: `.agents/skills/salesforce-diagram/evals/evals.json`
-- Per-eval metadata/assertions: `.agents/skills/salesforce-diagram/evals/metadata/`
+- Evals: `skills/salesforce-diagram/evals/evals.json`
+- Per-eval metadata/assertions: `skills/salesforce-diagram/evals/metadata/`
 
 Quick validation:
 
 ```bash
-jq . .agents/skills/salesforce-diagram/evals/evals.json >/dev/null
-for f in .agents/skills/salesforce-diagram/evals/metadata/*.json; do jq . "$f" >/dev/null; done
+jq . skills/salesforce-diagram/evals/evals.json >/dev/null
+for f in skills/salesforce-diagram/evals/metadata/*.json; do jq . "$f" >/dev/null; done
 ```
 
 ### Core evaluation commands
@@ -120,16 +69,16 @@ for f in .agents/skills/salesforce-diagram/evals/metadata/*.json; do jq . "$f" >
 Create grading stubs from eval expectations (for run folders like `eval-01/with_skill`, `without_skill`, `old_skill`):
 
 ```bash
-python3 .agents/skills/salesforce-diagram/scripts/generate_grading_stubs.py /path/to/iteration-1 --dry-run
-python3 .agents/skills/salesforce-diagram/scripts/generate_grading_stubs.py /path/to/iteration-1
+python3 skills/salesforce-diagram/scripts/generate_grading_stubs.py /path/to/iteration-1 --dry-run
+python3 skills/salesforce-diagram/scripts/generate_grading_stubs.py /path/to/iteration-1
 ```
 
 Recompute `grading.json` summary fields after grading:
 
 ```bash
-python3 .agents/skills/salesforce-diagram/scripts/update_grading_summary.py /path/to/iteration-1 --dry-run
-python3 .agents/skills/salesforce-diagram/scripts/update_grading_summary.py /path/to/iteration-1
-python3 .agents/skills/salesforce-diagram/scripts/update_grading_summary.py /path/to/iteration-1 --check
+python3 skills/salesforce-diagram/scripts/update_grading_summary.py /path/to/iteration-1 --dry-run
+python3 skills/salesforce-diagram/scripts/update_grading_summary.py /path/to/iteration-1
+python3 skills/salesforce-diagram/scripts/update_grading_summary.py /path/to/iteration-1 --check
 ```
 
 Aggregate benchmark (from skill-creator directory):
@@ -163,23 +112,9 @@ python ~/.agents/skills/skill-creator/eval-viewer/generate_review.py \
   --previous-workspace /path/to/iteration-1
 ```
 
-## References
+## Notes
 
-- Add skills for Copilot CLI:
-  - https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills
-- Find/install plugins for Copilot CLI:
-  - https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing
-- Copilot CLI plugin/marketplace schema:
-  - https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference
-
-## Diagram Types
-
-1. System Architecture Diagram
-2. Sequence Diagram
-3. C4 Context Diagram
-4. Data Model Diagram
-5. Product Map Diagram
-6. Data Flow Diagram
-7. Class Diagram
-8. Component Diagram
-9. Deployment Diagram
+- `SKILL.md` is required and case-sensitive.
+- Skill `name` should be lowercase kebab-case.
+- Keep the skill directory name aligned with the skill `name`.
+- `plugins/ai-architect-core/` currently exists as a folder, but no plugin manifest is checked in yet.
