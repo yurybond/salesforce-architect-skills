@@ -1,0 +1,17 @@
+{
+  "eval_id": 9,
+  "eval_name": "header-opt-out-enforced",
+  "prompt": "Create a Salesforce architecture diagram with no header. Include Sales Cloud, Service Cloud, MuleSoft, and SAP.",
+  "assertions": [
+    "Diagram includes Sales Cloud, Service Cloud, MuleSoft, and SAP.",
+    "Header block is omitted because user explicitly requested no header.",
+    "Architecture relationships between Salesforce and external systems are present.",
+    "Result still follows requested diagram scope despite header removal.",
+    "No contradictory instruction re-adds a mandatory default header."
+  ],
+  "focus_tags": [
+    "header-policy",
+    "opt-out",
+    "salesforce-architecture"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "eval_id": 3,
+  "eval_name": "salesforce-order-to-cash-integrations-sync-vs-async",
+  "prompt": "Map Salesforce integrations for Order-to-Cash: Salesforce to SAP S/4HANA, Stripe, Avalara, and Snowflake. Distinguish synchronous APIs vs async events.",
+  "assertions": [
+    "Diagram includes Salesforce, SAP S/4HANA, Stripe, Avalara, and Snowflake.",
+    "Connectors distinguish synchronous vs asynchronous communication styles.",
+    "Legend or explicit labeling explains sync vs async semantics.",
+    "Integration boundaries or zones are visually clear.",
+    "Order-to-Cash data movement is represented end-to-end."
+  ],
+  "focus_tags": [
+    "salesforce",
+    "integration",
+    "sync-async",
+    "order-to-cash"
+  ]
+}

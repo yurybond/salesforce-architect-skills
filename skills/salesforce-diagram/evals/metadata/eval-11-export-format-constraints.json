@@ -1,0 +1,17 @@
+{
+  "eval_id": 11,
+  "eval_name": "export-only-svg-pdf-to-specified-path",
+  "prompt": "Generate a Salesforce architecture diagram and export SVG and PDF only to docs/architecture/.",
+  "assertions": [
+    "Output includes Draw.io source artifact.",
+    "Output includes SVG and PDF exports.",
+    "Exports are written to docs/architecture/.",
+    "No unrequested export format is produced (for example PNG/JPG).",
+    "Architecture content is Salesforce-focused and coherent."
+  ],
+  "focus_tags": [
+    "exports",
+    "path",
+    "constraints"
+  ]
+}

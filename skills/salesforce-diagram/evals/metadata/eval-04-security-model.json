@@ -1,0 +1,17 @@
+{
+  "eval_id": 4,
+  "eval_name": "salesforce-security-model-access-controls",
+  "prompt": "Create a diagram for our Salesforce security model showing role hierarchy, profiles, permission sets, sharing sets, and public groups.",
+  "assertions": [
+    "Diagram includes role hierarchy structure.",
+    "Diagram includes profiles and permission sets as distinct control layers.",
+    "Diagram includes sharing sets and public groups.",
+    "Relationships between role hierarchy and access controls are represented.",
+    "Result is a security/access model view, not a generic architecture view."
+  ],
+  "focus_tags": [
+    "salesforce",
+    "security",
+    "access-model"
+  ]
+}

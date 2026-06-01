@@ -1,0 +1,19 @@
+{
+  "eval_id": 2,
+  "eval_name": "salesforce-erd-cardinality-and-direction",
+  "prompt": "Build an ERD for Salesforce objects: Account, Contact, Opportunity, OpportunityLineItem, Product2, Pricebook2, PricebookEntry, Quote, Order, and custom object Subscription__c. Show cardinalities and relationship directions.",
+  "assertions": [
+    "Output is an ERD/data-model style diagram rather than a generic flowchart.",
+    "Diagram includes all requested objects including Subscription__c.",
+    "Relationships are drawn between relevant objects (for example Opportunity to OpportunityLineItem).",
+    "Relationship direction is indicated on connectors.",
+    "Cardinality notation is present (one-to-many or equivalent).",
+    "Custom object is visually distinguishable from standard objects or clearly labeled as custom."
+  ],
+  "focus_tags": [
+    "salesforce",
+    "erd",
+    "cardinality",
+    "relationships"
+  ]
+}

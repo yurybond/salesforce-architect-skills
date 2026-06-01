@@ -1,0 +1,17 @@
+{
+  "eval_id": 10,
+  "eval_name": "named-style-preset-resolution-and-application",
+  "prompt": "Use my neo-brutalist style preset and create a Salesforce capabilities map for Sales, Service, CPQ, Billing, and Field Service.",
+  "assertions": [
+    "Run attempts to resolve the named preset neo-brutalist.",
+    "Capabilities map includes Sales, Service, CPQ, Billing, and Field Service.",
+    "If preset exists, output states that preset is applied.",
+    "If preset does not exist, output reports unknown preset and available alternatives.",
+    "Diagram intent remains a capabilities map rather than an unrelated view."
+  ],
+  "focus_tags": [
+    "style-preset",
+    "capabilities-map",
+    "salesforce"
+  ]
+}

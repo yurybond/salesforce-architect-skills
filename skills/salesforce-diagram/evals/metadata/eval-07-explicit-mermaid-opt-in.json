@@ -1,0 +1,17 @@
+{
+  "eval_id": 7,
+  "eval_name": "explicit-mermaid-sequence-opt-in",
+  "prompt": "Please create a sequence diagram (Mermaid) for case escalation from Experience Cloud to Service Cloud and Slack notifications.",
+  "assertions": [
+    "Output is Mermaid sequence diagram content.",
+    "Participants include Experience Cloud, Service Cloud, and Slack (or equivalent labels).",
+    "Sequence reflects case escalation progression.",
+    "No Draw.io-only enforcement blocks Mermaid output when explicitly requested.",
+    "Message directions are present between participants."
+  ],
+  "focus_tags": [
+    "mermaid",
+    "opt-in",
+    "sequence"
+  ]
+}

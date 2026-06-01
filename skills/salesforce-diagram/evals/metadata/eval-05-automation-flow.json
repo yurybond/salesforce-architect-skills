@@ -1,0 +1,18 @@
+{
+  "eval_id": 5,
+  "eval_name": "salesforce-lead-to-cash-automation-overview",
+  "prompt": "Draw a Salesforce automation flow overview for Lead-to-Cash with record-triggered flows, validation rules, Apex invocables, and approval processes.",
+  "assertions": [
+    "Diagram reflects Lead-to-Cash progression with multiple stages.",
+    "Record-triggered flows are explicitly shown.",
+    "Validation rules are represented as control/decision components.",
+    "Apex invocables are included as automation elements.",
+    "Approval processes are included and connected in the lifecycle."
+  ],
+  "focus_tags": [
+    "salesforce",
+    "automation",
+    "flow",
+    "lead-to-cash"
+  ]
+}

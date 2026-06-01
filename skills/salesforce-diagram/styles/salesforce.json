@@ -1,0 +1,53 @@
+{
+  "$schema": "schema.json",
+  "name": "salesforce",
+  "version": 1,
+  "default": false,
+  "source": {
+    "type": "xml",
+    "path": ".agents/skills/drawio-skill/assets/templates",
+    "extracted_at": "2026-05-31"
+  },
+  "confidence": "high",
+  "palette": {
+    "primary":   { "fillColor": "#dae8fc", "strokeColor": "#6c8ebf" },
+    "success":   { "fillColor": "#d5e8d4", "strokeColor": "#82b366" },
+    "warning":   { "fillColor": "#fff2cc", "strokeColor": "#d6b656" },
+    "accent":    { "fillColor": "#D9D9D9", "strokeColor": "#B3B3B3" },
+    "danger":    { "fillColor": "#f8cecc", "strokeColor": "#b85450" },
+    "neutral":   { "fillColor": "#e3e4e6", "strokeColor": "#2b2b2f" },
+    "secondary": { "fillColor": "#e1d5e7", "strokeColor": "#9673a6" }
+  },
+  "roles": {
+    "service":  "primary",
+    "database": "accent",
+    "queue":    "warning",
+    "gateway":  "accent",
+    "error":    "danger",
+    "external": "accent",
+    "security": "success"
+  },
+  "shapes": {
+    "service":   "rounded=1;arcSize=20;absoluteArcSize=1",
+    "database":  "shape=cylinder3",
+    "queue":     "rounded=1;arcSize=20;absoluteArcSize=1",
+    "decision":  "rhombus",
+    "external":  "rounded=1;arcSize=20;absoluteArcSize=1;dashed=1",
+    "container": "rounded=1;arcSize=20;absoluteArcSize=1;collapsible=0;recursiveResize=1"
+  },
+  "font": {
+    "fontFamily": "Helvetica",
+    "fontSize": 16,
+    "titleFontSize": 20,
+    "titleBold": true
+  },
+  "edges": {
+    "style": "edgeStyle=straightEdgeStyle;rounded=0;html=1;strokeColor=#6a6d73;strokeWidth=3;startSize=18;endSize=18",
+    "arrow": "endArrow=blockThin;endFill=0",
+    "dashedFor": ["optional", "async", "external"]
+  },
+  "extras": {
+    "sketch": false,
+    "globalStrokeWidth": 2
+  }
+}

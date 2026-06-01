@@ -1,0 +1,163 @@
+{
+  "skill_name": "salesforce-diagram",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a Salesforce org architecture diagram for a B2B company using Sales Cloud, Service Cloud, Experience Cloud, and Marketing Cloud. Include identity, integration middleware, ERP, and data warehouse. Output Draw.io and PNG into ./artifacts/diagrams/.",
+      "expected_output": "Produces a Draw.io-first architecture diagram with layered Salesforce and external systems, exports PNG, and respects requested output path.",
+      "files": [],
+      "expectations": [
+        "Output includes a .drawio source artifact.",
+        "Output includes a PNG export artifact.",
+        "Artifacts are saved under ./artifacts/diagrams/.",
+        "Diagram includes all requested Salesforce clouds (Sales, Service, Experience, Marketing).",
+        "Diagram includes identity, middleware, ERP, and data warehouse nodes.",
+        "Connections represent integration/data flow between major system groups."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Build an ERD for Salesforce objects: Account, Contact, Opportunity, OpportunityLineItem, Product2, Pricebook2, PricebookEntry, Quote, Order, and custom object Subscription__c. Show cardinalities and relationship directions.",
+      "expected_output": "Generates a Salesforce data model ERD using appropriate object and relationship conventions with clear cardinalities and directions.",
+      "files": [],
+      "expectations": [
+        "Output is an ERD/data-model style diagram rather than a generic flowchart.",
+        "Diagram includes all requested objects including Subscription__c.",
+        "Relationships are drawn between relevant objects (for example Opportunity to OpportunityLineItem).",
+        "Relationship direction is indicated on connectors.",
+        "Cardinality notation is present (one-to-many or equivalent).",
+        "Custom object is visually distinguishable from standard objects or clearly labeled as custom."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Map Salesforce integrations for Order-to-Cash: Salesforce to SAP S/4HANA, Stripe, Avalara, and Snowflake. Distinguish synchronous APIs vs async events.",
+      "expected_output": "Creates an integration topology diagram that separates synchronous and asynchronous flows with clear system boundaries.",
+      "files": [],
+      "expectations": [
+        "Diagram includes Salesforce, SAP S/4HANA, Stripe, Avalara, and Snowflake.",
+        "Connectors distinguish synchronous vs asynchronous communication styles.",
+        "Legend or explicit labeling explains sync vs async semantics.",
+        "Integration boundaries or zones are visually clear.",
+        "Order-to-Cash data movement is represented end-to-end."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Create a diagram for our Salesforce security model showing role hierarchy, profiles, permission sets, sharing sets, and public groups.",
+      "expected_output": "Builds a security/access model diagram covering hierarchy and access-control components in Salesforce.",
+      "files": [],
+      "expectations": [
+        "Diagram includes role hierarchy structure.",
+        "Diagram includes profiles and permission sets as distinct control layers.",
+        "Diagram includes sharing sets and public groups.",
+        "Relationships between role hierarchy and access controls are represented.",
+        "Result is a security/access model view, not a generic architecture view."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Draw a Salesforce automation flow overview for Lead-to-Cash with record-triggered flows, validation rules, Apex invocables, and approval processes.",
+      "expected_output": "Produces a workflow/automation diagram representing flow stages, automation components, and decision points.",
+      "files": [],
+      "expectations": [
+        "Diagram reflects Lead-to-Cash progression with multiple stages.",
+        "Record-triggered flows are explicitly shown.",
+        "Validation rules are represented as control/decision components.",
+        "Apex invocables are included as automation elements.",
+        "Approval processes are included and connected in the lifecycle."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Need a diagram of a generic microservices platform: API gateway, auth service, order service, payment service, Kafka, Postgres, Redis, and observability stack.",
+      "expected_output": "Skill should still produce a valid non-Salesforce architecture diagram in Draw.io format without Salesforce-only assumptions.",
+      "files": [],
+      "expectations": [
+        "Diagram includes API gateway, auth, order, and payment services.",
+        "Diagram includes Kafka, Postgres, Redis, and observability components.",
+        "Output remains Draw.io-oriented even though request is not Salesforce-specific.",
+        "Architecture view uses service-to-service connectivity and data/event paths.",
+        "No unnecessary Salesforce-only assumptions are introduced."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Please create a sequence diagram (Mermaid) for case escalation from Experience Cloud to Service Cloud and Slack notifications.",
+      "expected_output": "Because Mermaid is explicitly requested, output should be Mermaid sequence diagram content instead of default Draw.io-only output.",
+      "files": [],
+      "expectations": [
+        "Output is Mermaid sequence diagram content.",
+        "Participants include Experience Cloud, Service Cloud, and Slack (or equivalent labels).",
+        "Sequence reflects case escalation progression.",
+        "No Draw.io-only enforcement blocks Mermaid output when explicitly requested.",
+        "Message directions are present between participants."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Can you draw a quick diagram of Salesforce + NetSuite + HubSpot data flow?",
+      "expected_output": "Defaults to Draw.io when format is unspecified and produces an integration-style diagram.",
+      "files": [],
+      "expectations": [
+        "When format is unspecified, output defaults to Draw.io workflow.",
+        "Diagram includes Salesforce, NetSuite, and HubSpot.",
+        "Data-flow connections are represented between the systems.",
+        "Result is an integration-style diagram rather than an unrelated diagram type.",
+        "No Mermaid output is produced unless explicitly asked."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Create a Salesforce architecture diagram with no header. Include Sales Cloud, Service Cloud, MuleSoft, and SAP.",
+      "expected_output": "Generates diagram content while omitting the mandatory-by-default header because the user explicitly asked for no header.",
+      "files": [],
+      "expectations": [
+        "Diagram includes Sales Cloud, Service Cloud, MuleSoft, and SAP.",
+        "Header block is omitted because user explicitly requested no header.",
+        "Architecture relationships between Salesforce and external systems are present.",
+        "Result still follows requested diagram scope despite header removal.",
+        "No contradictory instruction re-adds a mandatory default header."
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Use my neo-brutalist style preset and create a Salesforce capabilities map for Sales, Service, CPQ, Billing, and Field Service.",
+      "expected_output": "Attempts to resolve and apply named style preset while creating a capabilities map diagram.",
+      "files": [],
+      "expectations": [
+        "Run attempts to resolve the named preset neo-brutalist.",
+        "Capabilities map includes Sales, Service, CPQ, Billing, and Field Service.",
+        "If preset exists, output states that preset is applied.",
+        "If preset does not exist, output reports unknown preset and available alternatives.",
+        "Diagram intent remains a capabilities map rather than an unrelated view."
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Generate a Salesforce architecture diagram and export SVG and PDF only to docs/architecture/.",
+      "expected_output": "Produces Draw.io source and only the requested SVG/PDF exports in the specified folder.",
+      "files": [],
+      "expectations": [
+        "Output includes Draw.io source artifact.",
+        "Output includes SVG and PDF exports.",
+        "Exports are written to docs/architecture/.",
+        "No unrequested export format is produced (for example PNG/JPG).",
+        "Architecture content is Salesforce-focused and coherent."
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "From Salesforce metadata, create a component map of objects, Apex classes, LWCs, Flows, and external integrations with arrows for dependencies.",
+      "expected_output": "Creates a metadata/component dependency map aligned to Salesforce-focused diagramming behavior.",
+      "files": [],
+      "expectations": [
+        "Diagram includes objects, Apex classes, LWCs, Flows, and external integrations.",
+        "Dependencies are represented with directional arrows.",
+        "View is a component/dependency map rather than an ERD or sequence diagram.",
+        "Dependencies are logically plausible (for example Flow referencing object or Apex integration path).",
+        "Output aligns with Salesforce metadata/component mapping intent."
+      ]
+    }
+  ]
+}

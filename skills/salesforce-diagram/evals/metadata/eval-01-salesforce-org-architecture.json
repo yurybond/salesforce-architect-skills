@@ -1,0 +1,19 @@
+{
+  "eval_id": 1,
+  "eval_name": "salesforce-org-architecture-drawio-png-path",
+  "prompt": "Create a Salesforce org architecture diagram for a B2B company using Sales Cloud, Service Cloud, Experience Cloud, and Marketing Cloud. Include identity, integration middleware, ERP, and data warehouse. Output Draw.io and PNG into ./artifacts/diagrams/.",
+  "assertions": [
+    "Output includes a .drawio source artifact.",
+    "Output includes a PNG export artifact.",
+    "Artifacts are saved under ./artifacts/diagrams/.",
+    "Diagram includes all requested Salesforce clouds (Sales, Service, Experience, Marketing).",
+    "Diagram includes identity, middleware, ERP, and data warehouse nodes.",
+    "Connections represent integration/data flow between major system groups."
+  ],
+  "focus_tags": [
+    "salesforce",
+    "architecture",
+    "formats",
+    "output-path"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "eval_id": 8,
+  "eval_name": "implicit-format-defaults-to-drawio",
+  "prompt": "Can you draw a quick diagram of Salesforce + NetSuite + HubSpot data flow?",
+  "assertions": [
+    "When format is unspecified, output defaults to Draw.io workflow.",
+    "Diagram includes Salesforce, NetSuite, and HubSpot.",
+    "Data-flow connections are represented between the systems.",
+    "Result is an integration-style diagram rather than an unrelated diagram type.",
+    "No Mermaid output is produced unless explicitly asked."
+  ],
+  "focus_tags": [
+    "default-format",
+    "drawio",
+    "integration"
+  ]
+}

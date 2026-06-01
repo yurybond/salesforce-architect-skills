@@ -1,0 +1,17 @@
+{
+  "eval_id": 6,
+  "eval_name": "generic-microservices-architecture-default-drawio",
+  "prompt": "Need a diagram of a generic microservices platform: API gateway, auth service, order service, payment service, Kafka, Postgres, Redis, and observability stack.",
+  "assertions": [
+    "Diagram includes API gateway, auth, order, and payment services.",
+    "Diagram includes Kafka, Postgres, Redis, and observability components.",
+    "Output remains Draw.io-oriented even though request is not Salesforce-specific.",
+    "Architecture view uses service-to-service connectivity and data/event paths.",
+    "No unnecessary Salesforce-only assumptions are introduced."
+  ],
+  "focus_tags": [
+    "generic",
+    "architecture",
+    "default-behavior"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "eval_id": 12,
+  "eval_name": "salesforce-metadata-component-dependency-map",
+  "prompt": "From Salesforce metadata, create a component map of objects, Apex classes, LWCs, Flows, and external integrations with arrows for dependencies.",
+  "assertions": [
+    "Diagram includes objects, Apex classes, LWCs, Flows, and external integrations.",
+    "Dependencies are represented with directional arrows.",
+    "View is a component/dependency map rather than an ERD or sequence diagram.",
+    "Dependencies are logically plausible (for example Flow referencing object or Apex integration path).",
+    "Output aligns with Salesforce metadata/component mapping intent."
+  ],
+  "focus_tags": [
+    "salesforce",
+    "metadata",
+    "component-map",
+    "dependencies"
+  ]
+}
